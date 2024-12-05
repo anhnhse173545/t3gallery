@@ -1,6 +1,8 @@
 import Link from "next/link";
 import { db } from "~/server/db";
 
+export const dynamic = "force-dynamic";
+
 const mockURLs = [
   "https://utfs.io/f/bKGrwwMj5D1jUzwMxdFqcitzG12LE4YSxWJjIHnlCKye65dr",
   "https://utfs.io/f/bKGrwwMj5D1jqV6OJRSLjath9JwBfZcm71dEYCP3syeOxWMr",
@@ -14,6 +16,8 @@ const mockImages = mockURLs.map((url, index) => ({
 }));
 
 export default async function HomePage() {
+  
+
   const posts = await db.query.posts.findMany();
   console.log(posts);
 
